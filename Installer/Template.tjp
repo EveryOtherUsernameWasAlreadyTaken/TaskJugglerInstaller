@@ -1,0 +1,67 @@
+project projectid "My project"  2015-04-01 +12m {
+	timezone "Europe/Berlin"
+	currency "EUR"
+	timeformat "%Y-%m-%d"
+	numberformat "-" "" "," "." 1
+	currencyformat "(" ")" "," "." 0
+}
+
+# This is a comment
+
+/*
+This is a multiline comment
+*/
+
+rate 300.0
+
+leaves holiday "Christmas" 2015-12-25 +1d
+
+resource teamid "My Team" {
+  limits {dailymax 6.4h} #80%
+  resource personid "My Employee" {
+		leaves annual 2015-01-01 - 2015-01-08
+		leaves annual 2015-12-23 - 2015-12-31
+  }
+}
+
+task taskid "My Task"{
+	allocate teamid
+	task subtaskid "My Subtask" {
+		task level3task "My Task on Level 3" {	effort 10d complete 50}
+		task follower "Follower task" {	
+			depends !level3task { gapduration 2w } # ! goes up one level
+			effort 40h 
+			complete 0
+		}
+	}
+}	
+resourcereport "resources" {
+  formats html
+  columns name, annualleave, annualleavebalance, sickleave, specialleave, unpaidleave
+}
+
+macro TaskTip [
+  tooltip istask() -8<-
+    '''Start: ''' <-query attribute='start'->
+    '''End: ''' <-query attribute='end'->
+    ----
+    '''Resources:'''
+
+    <-query attribute='resources'->
+    ----
+    '''Precursors: '''
+
+    <-query attribute='precursors'->
+    ----
+    '''Followers: '''
+
+    <-query attribute='followers'->
+    ->8-
+]
+
+taskreport overview "tasks" {
+	formats html
+	columns bsi { title 'WBS' },
+          name, start, end, effort, duration,
+		  chart { ${TaskTip} }
+}
