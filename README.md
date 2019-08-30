@@ -13,5 +13,7 @@ Installer for the project planning tool [TaskJuggler](https://github.com/taskjug
 
 ## Downloads
 
+* [Installer 0.7.1.9 (32 Bit) for TaskJuggler 3.5.0](Downloads/TaskJuggler%203.5.0%20Installer%200.7.1.9%20x86.exe), first build based on these Github sources
+* [Installer 0.7.1.9 (64 Bit) for TaskJuggler 3.5.0](Downloads/TaskJuggler%203.5.0%20Installer%200.7.1.9%20x64.exe), first build based on these Github sources
 * [Installer 0.7.1.8 (32 Bit) for TaskJuggler 3.5.0](Downloads/TaskJuggler%203.5.0%20Installer%200.7.1.8%20x86.exe), as published by WelliSolutions originally
 * [Installer 0.7.1.8 (64 Bit) for TaskJuggler 3.5.0](Downloads/TaskJuggler%203.5.0%20Installer%200.7.1.8%20x64.exe), as published by WelliSolutions originally
