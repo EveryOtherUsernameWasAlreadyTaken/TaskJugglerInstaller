@@ -1,4 +1,4 @@
-#define AppVersion "3.5.0"
+#define AppVersion "3.6.0"
 #define InstallerVersion "0.7"
 #define Title "TaskJuggler"
 #define ShortTitle "TaskJuggler"
