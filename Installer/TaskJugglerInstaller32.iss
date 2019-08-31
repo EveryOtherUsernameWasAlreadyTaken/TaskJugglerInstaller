@@ -7,10 +7,6 @@ ArchitecturesAllowed=x86
 
 [Languages]
 
-[Tasks]
-;Name: performericon; Description: Create desktop icon for Performer; GroupDescription: {cm:AdditionalIcons}; Flags: checked
-;Name: reportericon; Description: Create desktop icon for Reporter; GroupDescription: {cm:AdditionalIcons}; Flags: checked
-
 [Files]
 Source: "Files\rubyinstaller-2.2.1.exe"; DestDir: {tmp};
 #include "CommonFiles.iss"
