@@ -63,5 +63,5 @@ taskreport overview "tasks" {
 	formats html
 	columns bsi { title 'WBS' },
           name, start, end, effort, duration,
-		  chart { ${TaskTip} }
+		  chart { ${TaskTip} width 1070 } # The total report will be at ~1600 px then
 }
