@@ -1,4 +1,11 @@
+# You can add explanations using single line comments
+/*
+Or multiline comments, if the explanation is very long.
+*/
+
 project projectid "My project"  2020-01-01 +12m {
+    /* Defining the start date as 1st of January is good if allowances for vacation are granted per calendar year.
+	   To have the actual project start at a different date, you define a root task and set the start date there. */
 	timezone "Europe/Berlin"
 	currency "EUR"
 	timeformat "%Y-%m-%d"            # YYYY-MM-DD
@@ -8,12 +15,6 @@ project projectid "My project"  2020-01-01 +12m {
 	weekstartsmonday
 	dailyworkinghours 8
 }
-
-# You can add explanations using single line comments
-
-/*
-Or multiline comments, if the explanation is very long.
-*/
 
 # You can define the daily cost of a resource
 rate 300.0
@@ -30,8 +31,9 @@ resource teamname "My Team" {
   leaves special 2020-03-10 - 2020-03-12
   
   resource personid "My Employee" {
+		# This allowance will cause problems when the project start date isn't the 1st of January.
+  		leaveallowances annual 2020-01-01 20d
         # Specify the employee's personal vacation 
-		leaveallowances annual 2020-01-01 20d
 		leaves annual 2020-01-01 - 2020-01-08
 		leaves annual 2020-12-23 - 2020-12-31
 		# It's possible that someone is ill for a while
@@ -41,9 +43,10 @@ resource teamname "My Team" {
 
 # Tasks define the work that's to be done. Like resources, they can be hierachical.
 
-task taskid "My Task"{
+task proj "My Project"{
     # Who works on that task? Let's keep things simple, assuming everyone can work on everything.
 	allocate teamname
+	# Since the project start is on 1st of January, we define the project start here explicitly.
 	start 2020-03-01
 	
 	task subtaskid "My Subtask" {
