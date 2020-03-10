@@ -64,6 +64,11 @@ task taskid "My Task"{
 		duration 3w
 		limits { dailymax 0.5h }
 	}
+	task doccomplete "Documentation complete" {
+		depends !documentation
+		# Yippieh! We can reach a milestone and celebrate progress!
+		milestone
+	}
 }
 
 resourcereport "resources" {
