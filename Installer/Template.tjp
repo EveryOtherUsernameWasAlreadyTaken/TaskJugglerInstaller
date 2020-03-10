@@ -1,10 +1,12 @@
-project projectid "My project"  2020-03-01 +12m {
+project projectid "My project"  2020-01-01 +12m {
 	timezone "Europe/Berlin"
 	currency "EUR"
 	timeformat "%Y-%m-%d"            # YYYY-MM-DD
 	numberformat "-" "" "," "." 1    # <negativeprefix> <negativesuffix> <thousandsep> <fractionsep> <fractiondigits>
 	currencyformat "-" "" "," "." 0  # <negativeprefix> <negativesuffix> <thousandsep> <fractionsep> <fractiondigits>
 	timingresolution 60 min          # default: 60, max: 60, min:5
+	weekstartsmonday
+	dailyworkinghours 8
 }
 
 # You can add explanations using single line comments
@@ -29,6 +31,7 @@ resource teamname "My Team" {
   
   resource personid "My Employee" {
         # Specify the employee's personal vacation 
+		leaveallowances annual 2020-01-01 20d
 		leaves annual 2020-01-01 - 2020-01-08
 		leaves annual 2020-12-23 - 2020-12-31
 		# It's possible that someone is ill for a while
@@ -37,9 +40,11 @@ resource teamname "My Team" {
 }
 
 # Tasks define the work that's to be done. Like resources, they can be hierachical.
+
 task taskid "My Task"{
     # Who works on that task? Let's keep things simple, assuming everyone can work on everything.
 	allocate teamname
+	start 2020-03-01
 	
 	task subtaskid "My Subtask" {
 		task level3task "My Task on level 3" {	
@@ -76,6 +81,21 @@ resourcereport "resources" {
   columns name, annualleave, annualleavebalance, sickleave, specialleave, unpaidleave
 }
 
+resourcereport allocationGraph "graph" {
+	headline "Resource Allocation Graph"
+	columns name, effort, rate, weekly { width 1070 }
+	loadunit shortauto
+	hidetask ~(isleaf() & isleaf_())
+	sorttasks plan.start.up
+}
+
+taskreport projectBreakdown "ProjectBreakdown" {
+	headline "Project Breakdown"
+	columns name, start, end, daily { width 1070 }
+	hideresource 1
+}
+
+
 macro TaskTip [
   tooltip istask() -8<-
     '''Start: ''' <-query attribute='start'->
@@ -100,4 +120,30 @@ taskreport overview "tasks" {
 	columns bsi { title 'WBS' },
           name, start, end, effort, duration,
 		  chart { ${TaskTip} width 1070 } # The total report will be at ~1600 px then
+}
+
+navigator navbar {
+  hidereport 0
+}
+
+textreport frame "index" {
+  header -8<-
+    == Project My Project	==
+    <[navigator id="navbar"]>
+  ->8-
+  
+  textreport "Overview" {
+    formats html
+    center '<[report id="overview"]>'
+  }
+  
+  textreport "Allocation graph" {
+    formats html
+    center '<[report id="allocationGraph"]>'
+  }
+  
+  textreport "Project Breakdown" {
+    formats html
+    center '<[report id="projectBreakdown"]>'
+  }
 }
