@@ -9,7 +9,7 @@ Root: HKCR; Subkey: "TaskJugglerProject\shell\open\command"; ValueType: expandsz
 
 ; Context menu "Process with TaskJuggler"
 Root: HKCR; Subkey: "TaskJugglerProject\shell\process"; ValueType: string; ValueName: ""; ValueData: "Process with TaskJuggler"; Flags: uninsdeletekey createvalueifdoesntexist;
-Root: HKCR; Subkey: "TaskJugglerProject\shell\process\command"; ValueType: string; ValueName: ""; ValueData: """{app}{\}taskjuggler.bat"" ""{#RubyDir}{\}"" ""%1"""; Flags: uninsdeletekey createvalueifdoesntexist;
+Root: HKCR; Subkey: "TaskJugglerProject\shell\process\command"; ValueType: string; ValueName: ""; ValueData: """{app}{\}taskjuggler.bat"" ""{#RubyDir}{\}"" ""%1"""; Flags: uninsdeletekey;
 
 ; Windows Explorer Preview Pane
 Root: HKCR; Subkey: ".tjp"; ValueType: string; ValueName: "PerceivedType"; ValueData: "text"; Flags: uninsdeletevalue createvalueifdoesntexist
