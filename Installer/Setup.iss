@@ -1,5 +1,5 @@
 #define AppVersion "3.6.0"
-#define InstallerVersion "0.7"
+#define InstallerVersion "0.8"
 #define Title "TaskJuggler"
 #define ShortTitle "TaskJuggler"
 [Setup]
@@ -28,7 +28,7 @@ VersionInfoProductName={#Title}
 VersionInfoProductVersion={#AppVersion}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoVersion={#AppVersion}
-AppCopyright=Copyright © 2019 Thomas Weller
+AppCopyright=Copyright © 2020 Thomas Weller
 SetupIconFile=tj3.ico
 WizardImageFile=Logo.bmp
 WizardSmallImageFile=WelliSolutions_Logo.bmp

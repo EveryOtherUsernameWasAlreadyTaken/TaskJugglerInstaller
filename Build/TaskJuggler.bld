@@ -7,7 +7,7 @@
 		</step>
 		<step action='Set Macro'>
 			<MacroName>REVISION</MacroName>
-			<MacroValue>10</MacroValue>
+			<MacroValue>12</MacroValue>
 			<buildfailsteps type='11'>0</buildfailsteps>
 			<indent type='3'>1</indent>
 			<name>Set Macro</name>
@@ -99,13 +99,13 @@ WelliSolutions.Controls.dll]]></Ext>
 		</step></steps>
 	<macros>
 		<macro name='BUILD'>
-			<value>1</value>
+			<value>2</value>
 		</macro>
 		<macro name='MAJOR'>
 			<value>0</value>
 		</macro>
 		<macro name='MINOR'>
-			<value>7</value>
+			<value>8</value>
 		</macro>
 		<macro name='TJVER'>
 			<value>3.6.0</value>
