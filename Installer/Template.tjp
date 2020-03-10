@@ -34,6 +34,11 @@ task taskid "My Task"{
 			effort 40h 
 			complete 0
 		}
+		task preceding "Preceding task" {
+			precedes !follower
+			effort 1w
+			complete 30
+		}
 	}
 }	
 resourcereport "resources" {
