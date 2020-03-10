@@ -9,7 +9,7 @@ ArchitecturesAllowed=x86
 [Languages]
 
 [Files]
-Source: "Files\rubyinstaller-2.6.5-1-x86.exe"; DestDir: {tmp};
+Source: "Files\{#RubyInstaller}"; DestDir: {tmp};
 #include "CommonFiles.iss"
 
 [Icons]
