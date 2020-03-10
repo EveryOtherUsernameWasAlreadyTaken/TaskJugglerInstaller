@@ -1,4 +1,4 @@
-project projectid "My project"  2019-04-01 +12m {
+project projectid "My project"  2020-03-01 +12m {
 	timezone "Europe/Berlin"
 	currency "EUR"
 	timeformat "%Y-%m-%d"            # YYYY-MM-DD
@@ -7,40 +7,65 @@ project projectid "My project"  2019-04-01 +12m {
 	timingresolution 60 min          # default: 60, max: 60, min:5
 }
 
-# This is a comment
+# You can add explanations using single line comments
 
 /*
-This is a multiline comment
+Or multiline comments, if the explanation is very long.
 */
 
+# You can define the daily cost of a resource
 rate 300.0
 
-leaves holiday "Christmas" 2019-12-25 +1d
+# Specify public / national holidays for accurate scheduling
+leaves holiday "Christmas" 2020-12-25 +1d
 
-resource teamid "My Team" {
+# Resources can be hierarchical. That's useful for creating teams
+resource teamname "My Team" {
+  # You can never work 8 hours a day efficiently. Let's go the 80/20 rule for the whole team.
   limits {dailymax 6.4h} #80%
+  
+  # Maybe the whole team is on a training and the project does not make progress during that time
+  leaves special 2020-03-10 - 2020-03-12
+  
   resource personid "My Employee" {
-		leaves annual 2019-01-01 - 2019-01-08
-		leaves annual 2019-12-23 - 2019-12-31
+        # Specify the employee's personal vacation 
+		leaves annual 2020-01-01 - 2020-01-08
+		leaves annual 2020-12-23 - 2020-12-31
+		# It's possible that someone is ill for a while
+		leaves sick 2020-03-05 - 2020-03-06
   }
 }
 
+# Tasks define the work that's to be done. Like resources, they can be hierachical.
 task taskid "My Task"{
-	allocate teamid
+    # Who works on that task? Let's keep things simple, assuming everyone can work on everything.
+	allocate teamname
+	
 	task subtaskid "My Subtask" {
-		task level3task "My Task on Level 3" {	effort 10d complete 50}
+		task level3task "My Task on level 3" {	
+		    # Tasks can be scheduled by effort, which is typical on software development projects			
+			effort 10d 
+			complete 50
+		}
 		task follower "Follower task" {	
-			depends !level3task { gapduration 2w } # ! goes up one level
+		    # This is a forward dependency. ! goes up one level
+			depends !level3task { gapduration 2w }
 			effort 40h 
 			complete 0
 		}
 		task preceding "Preceding task" {
+		    # This is a backward dependency.
 			precedes !follower
 			effort 1w
-			complete 30
 		}
 	}
-}	
+	task documentation "Documentation" {
+		# Tasks can also be scheduled by duration. This is useful for stuff that appears regularly.
+		duration 3w
+		limits { dailymax 0.5h }
+	}
+}
+
 resourcereport "resources" {
   formats html
   columns name, annualleave, annualleavebalance, sickleave, specialleave, unpaidleave
