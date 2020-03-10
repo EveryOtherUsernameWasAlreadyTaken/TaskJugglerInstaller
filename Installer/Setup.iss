@@ -1,5 +1,5 @@
-#define AppVersion "3.5.0"
-#define InstallerVersion "0.7"
+#define AppVersion "3.6.0"
+#define InstallerVersion "0.8"
 #define Title "TaskJuggler"
 #define ShortTitle "TaskJuggler"
 [Setup]
@@ -9,10 +9,10 @@
 AppId={{C26D7CDC-E4A2-471C-ABC7-D4DAE5725D44}
 AppName={#ShortTitle}
 AppVerName={#ShortTitle} {#AppVersion}
-AppPublisher=WelliSolutions
-AppPublisherURL=http://www.wellisolutions.de
-AppSupportURL=http://www.wellisolutions.de
-AppUpdatesURL=http://www.wellisolutions.de
+AppPublisher=Thomas Weller
+AppPublisherURL=https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller
+AppSupportURL=https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller/issues
+AppUpdatesURL=https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller/releases
 DefaultDirName={pf}\WelliSolutions\{#ShortTitle}
 DefaultGroupName={#ShortTitle}
 AllowNoIcons=true
@@ -21,14 +21,14 @@ OutputBaseFilename={#ShortTitle} {#AppVersion} Installer {#InstallerVersion} {#I
 Compression=lzma
 SolidCompression=true
 ; Make useful description of Setup.exe itself
-VersionInfoCompany=WelliSolutions
-VersionInfoCopyright=2015 by WelliSolutions
+VersionInfoCompany=Thomas Weller
+VersionInfoCopyright=2019 by Thomas Weller
 VersionInfoDescription={#Title} {#AppVersion}
 VersionInfoProductName={#Title}
 VersionInfoProductVersion={#AppVersion}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoVersion={#AppVersion}
-AppCopyright=Copyright © 2015 WelliSolutions
+AppCopyright=Copyright © 2020 Thomas Weller
 SetupIconFile=tj3.ico
 WizardImageFile=Logo.bmp
 WizardSmallImageFile=WelliSolutions_Logo.bmp

@@ -7,7 +7,7 @@
 		</step>
 		<step action='Set Macro'>
 			<MacroName>REVISION</MacroName>
-			<MacroValue>10</MacroValue>
+			<MacroValue>12</MacroValue>
 			<buildfailsteps type='11'>0</buildfailsteps>
 			<indent type='3'>1</indent>
 			<name>Set Macro</name>
@@ -53,16 +53,16 @@ WelliSolutions.Controls.dll]]></Ext>
 			<Exe>C:\Program Files (x86)\Inno Setup 6\ISCC.exe</Exe>
 			<Filename>..\Installer\TaskJugglerInstaller32.iss</Filename>
 			<ISPPCompat type='11'>-1</ISPPCompat>
-			<OutputFilename>TaskJuggler 3.5.0 Installer %VERSION% x86</OutputFilename>
+			<OutputFilename>TaskJuggler %TJVER% Installer %VERSION% x86</OutputFilename>
 			<ShowCmd type='11'>-1</ShowCmd>
 			<buildfailsteps type='11'>0</buildfailsteps>
 			<indent type='3'>1</indent>
 			<name>Make 32 bit Setup</name>
 		</step>
 		<step action='Sign Code'>
-			<CertDescr>TaskJuggler 3.5.0 Installer %VERSION% x86</CertDescr>
+			<CertDescr>TaskJuggler %TJVER% Installer %VERSION% x86</CertDescr>
 			<Exe>D:\Windows Kits\10\bin\10.0.17763.0\x64\signtool.exe</Exe>
-			<Filename>..\Installer\Compiled\TaskJuggler 3.5.0 Installer %VERSION% x86.exe</Filename>
+			<Filename>..\Installer\Compiled\TaskJuggler %TJVER% Installer %VERSION% x86.exe</Filename>
 			<InfoURL>https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller</InfoURL>
 			<KeepMod type='11'>-1</KeepMod>
 			<Password encrypted='1'>amkwNSREZkNXUFp3JmFRMtXR3h/hLVR7niOFXcmmOHKVrGPvb6OrBFoRDxHZRNDv</Password>
@@ -77,16 +77,16 @@ WelliSolutions.Controls.dll]]></Ext>
 			<Exe>C:\Program Files (x86)\Inno Setup 6\ISCC.exe</Exe>
 			<Filename>..\Installer\TaskJugglerInstaller64.iss</Filename>
 			<ISPPCompat type='11'>-1</ISPPCompat>
-			<OutputFilename>TaskJuggler 3.5.0 Installer %VERSION% x64</OutputFilename>
+			<OutputFilename>TaskJuggler %TJVER% Installer %VERSION% x64</OutputFilename>
 			<ShowCmd type='11'>-1</ShowCmd>
 			<buildfailsteps type='11'>0</buildfailsteps>
 			<indent type='3'>1</indent>
 			<name>Make 64 bit Setup</name>
 		</step>
 		<step action='Sign Code'>
-			<CertDescr>TaskJuggler 3.5.0 Installer %VERSION% x64</CertDescr>
+			<CertDescr>TaskJuggler %TJVER% Installer %VERSION% x64</CertDescr>
 			<Exe>D:\Windows Kits\10\bin\10.0.17763.0\x64\signtool.exe</Exe>
-			<Filename>..\Installer\Compiled\TaskJuggler 3.5.0 Installer %VERSION% x64.exe</Filename>
+			<Filename>..\Installer\Compiled\TaskJuggler %TJVER% Installer %VERSION% x64.exe</Filename>
 			<InfoURL>https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller</InfoURL>
 			<KeepMod type='11'>-1</KeepMod>
 			<Password encrypted='1'>amkwNSREZkNXUFp3JmFRMtXR3h/hLVR7niOFXcmmOHKVrGPvb6OrBFoRDxHZRNDv</Password>
@@ -99,13 +99,16 @@ WelliSolutions.Controls.dll]]></Ext>
 		</step></steps>
 	<macros>
 		<macro name='BUILD'>
-			<value>1</value>
+			<value>2</value>
 		</macro>
 		<macro name='MAJOR'>
 			<value>0</value>
 		</macro>
 		<macro name='MINOR'>
-			<value>7</value>
+			<value>8</value>
+		</macro>
+		<macro name='TJVER'>
+			<value>3.6.0</value>
 		</macro>
 		<macro name='VERSION'>
 			<value>%MAJOR%.%MINOR%.%BUILD%.%REVISION%</value>

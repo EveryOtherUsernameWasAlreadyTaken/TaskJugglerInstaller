@@ -4,5 +4,6 @@ echo Expecting Ruby in %1
 echo Processing file %2
 echo Command line: "%~1ruby.exe" "%~1tj3" %2
 echo.
+chcp 65001
 "%~1ruby.exe" "%~1tj3" %2
 if errorlevel 1 pause
