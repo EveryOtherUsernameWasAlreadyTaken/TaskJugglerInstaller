@@ -1,5 +1,6 @@
 #define public InstallerBitness "x86"
 #define public RubyDir "C:\ruby26\bin\"
+#define public RubyInstaller "rubyinstaller-2.6.5-1-x86.exe"
 
 [Setup]
 #include "Setup.iss"
@@ -14,7 +15,6 @@ Source: "Files\rubyinstaller-2.6.5-1-x86.exe"; DestDir: {tmp};
 [Icons]
 
 [Run]
-Description: "Install Ruby 2.6.5 x32 incl. RubyGems"; Filename: {tmp}\rubyinstaller-2.6.5-1-x86.exe; Flags: postinstall;  Parameters: "/silent /tasks=modpath"
 #include "Run.iss"
 
 [Registry]
