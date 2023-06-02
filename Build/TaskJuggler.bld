@@ -61,7 +61,7 @@ WelliSolutions.Controls.dll]]></Ext>
 		</step>
 		<step action='Sign Code'>
 			<CertDescr>TaskJuggler %TJVER% Installer %VERSION% x86</CertDescr>
-			<Exe>D:\Windows Kits\10\bin\10.0.17763.0\x64\signtool.exe</Exe>
+			<Exe>C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\signtool.exe</Exe>
 			<Filename>..\Installer\Compiled\TaskJuggler %TJVER% Installer %VERSION% x86.exe</Filename>
 			<InfoURL>https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller</InfoURL>
 			<KeepMod type='11'>-1</KeepMod>
@@ -85,11 +85,12 @@ WelliSolutions.Controls.dll]]></Ext>
 		</step>
 		<step action='Sign Code'>
 			<CertDescr>TaskJuggler %TJVER% Installer %VERSION% x64</CertDescr>
-			<Exe>D:\Windows Kits\10\bin\10.0.17763.0\x64\signtool.exe</Exe>
+			<Exe>C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\x64\signtool.exe</Exe>
 			<Filename>..\Installer\Compiled\TaskJuggler %TJVER% Installer %VERSION% x64.exe</Filename>
 			<InfoURL>https://github.com/EveryOtherUsernameWasAlreadyTaken/TaskJugglerInstaller</InfoURL>
 			<KeepMod type='11'>-1</KeepMod>
 			<Password encrypted='1'>amkwNSREZkNXUFp3JmFRMtXR3h/hLVR7niOFXcmmOHKVrGPvb6OrBFoRDxHZRNDv</Password>
+			<ShowCmd type='11'>-1</ShowCmd>
 			<StoreName>%PFXFILE%</StoreName>
 			<TimeServer>http://timestamp.verisign.com/scripts/timstamp.dll</TimeServer>
 			<buildfailsteps type='11'>0</buildfailsteps>
@@ -99,7 +100,7 @@ WelliSolutions.Controls.dll]]></Ext>
 		</step></steps>
 	<macros>
 		<macro name='BUILD'>
-			<value>2</value>
+			<value>5</value>
 		</macro>
 		<macro name='MAJOR'>
 			<value>0</value>
@@ -108,7 +109,7 @@ WelliSolutions.Controls.dll]]></Ext>
 			<value>8</value>
 		</macro>
 		<macro name='TJVER'>
-			<value>3.6.0</value>
+			<value>3.7.2</value>
 		</macro>
 		<macro name='VERSION'>
 			<value>%MAJOR%.%MINOR%.%BUILD%.%REVISION%</value>
