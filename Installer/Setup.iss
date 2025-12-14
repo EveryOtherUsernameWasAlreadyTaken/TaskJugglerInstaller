@@ -1,5 +1,5 @@
-#define AppVersion "3.7.2"
-#define InstallerVersion "0.8"
+#define AppVersion "3.8.4"
+#define InstallerVersion "0.9"
 #define Title "TaskJuggler"
 #define ShortTitle "TaskJuggler"
 [Setup]
@@ -22,13 +22,13 @@ Compression=lzma
 SolidCompression=true
 ; Make useful description of Setup.exe itself
 VersionInfoCompany=Thomas Weller
-VersionInfoCopyright=2023 by Thomas Weller
+VersionInfoCopyright=2025 by Thomas Weller
 VersionInfoDescription={#Title} {#AppVersion}
 VersionInfoProductName={#Title}
 VersionInfoProductVersion={#AppVersion}
 VersionInfoTextVersion={#AppVersion}
 VersionInfoVersion={#AppVersion}
-AppCopyright=Copyright © 2023 Thomas Weller
+AppCopyright=Copyright © 2025 Thomas Weller
 SetupIconFile=tj3.ico
 WizardImageFile=Logo.bmp
 WizardSmallImageFile=WelliSolutions_Logo.bmp
