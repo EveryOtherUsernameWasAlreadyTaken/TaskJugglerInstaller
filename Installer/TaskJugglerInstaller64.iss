@@ -1,6 +1,6 @@
 #define public InstallerBitness "x64"
-#define public RubyDir "C:\ruby27-x64\bin\"
-#define public RubyInstaller "rubyinstaller-2.7.8-1-x64.exe"
+#define public RubyDir "C:\Ruby34-x64\bin\"
+#define public RubyInstaller "rubyinstaller-3.4.7-1-x64.exe"
 
 [Setup]
 #include "Setup.iss"
